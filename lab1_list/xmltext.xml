@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <PhoneTalk>
+    <SecondName>Azamat</SecondName>
+    <PhoneNumber>88005553535</PhoneNumber>
+    <TraficPerMin>12</TraficPerMin>
+    <DateTalk>2021-11-20</DateTalk>
+    <Begin>09:00:00</Begin>
+    <End>09:30:00</End>
+  </PhoneTalk>
+  
+  <PhoneTalk>
+    <SecondName>Boromir</SecondName>
+    <PhoneNumber>88006663536</PhoneNumber>
+    <TraficPerMin>4</TraficPerMin>
+    <DateTalk>2021-10-20</DateTalk>
+    <Begin>12:00:01</Begin>
+    <End>13:45:23</End>
+  </PhoneTalk>
+
+</root>
