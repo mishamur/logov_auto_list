@@ -29,6 +29,7 @@ namespace lab1_list
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,6 +57,13 @@ namespace lab1_list
             this.textBoxSearchName = new System.Windows.Forms.TextBox();
             this.dateTimePickerSeacrhDate = new System.Windows.Forms.DateTimePicker();
             this.buttonReset = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dateTimePickerViewMoreCurrent = new System.Windows.Forms.DateTimePicker();
+            this.buttonViewMoreCurrent = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -242,7 +250,7 @@ namespace lab1_list
             // 
             // textBoxIndex
             // 
-            this.textBoxIndex.Location = new System.Drawing.Point(181, 287);
+            this.textBoxIndex.Location = new System.Drawing.Point(476, 233);
             this.textBoxIndex.Name = "textBoxIndex";
             this.textBoxIndex.Size = new System.Drawing.Size(100, 23);
             this.textBoxIndex.TabIndex = 20;
@@ -259,7 +267,7 @@ namespace lab1_list
             // 
             // buttonSearchSecondName
             // 
-            this.buttonSearchSecondName.Location = new System.Drawing.Point(0, 336);
+            this.buttonSearchSecondName.Location = new System.Drawing.Point(0, 321);
             this.buttonSearchSecondName.Name = "buttonSearchSecondName";
             this.buttonSearchSecondName.Size = new System.Drawing.Size(127, 23);
             this.buttonSearchSecondName.TabIndex = 22;
@@ -269,7 +277,7 @@ namespace lab1_list
             // 
             // buttonSearchDate
             // 
-            this.buttonSearchDate.Location = new System.Drawing.Point(0, 383);
+            this.buttonSearchDate.Location = new System.Drawing.Point(0, 350);
             this.buttonSearchDate.Name = "buttonSearchDate";
             this.buttonSearchDate.Size = new System.Drawing.Size(103, 23);
             this.buttonSearchDate.TabIndex = 23;
@@ -279,14 +287,14 @@ namespace lab1_list
             // 
             // textBoxSearchName
             // 
-            this.textBoxSearchName.Location = new System.Drawing.Point(133, 336);
+            this.textBoxSearchName.Location = new System.Drawing.Point(133, 322);
             this.textBoxSearchName.Name = "textBoxSearchName";
             this.textBoxSearchName.Size = new System.Drawing.Size(159, 23);
             this.textBoxSearchName.TabIndex = 24;
             // 
             // dateTimePickerSeacrhDate
             // 
-            this.dateTimePickerSeacrhDate.Location = new System.Drawing.Point(109, 381);
+            this.dateTimePickerSeacrhDate.Location = new System.Drawing.Point(112, 350);
             this.dateTimePickerSeacrhDate.Name = "dateTimePickerSeacrhDate";
             this.dateTimePickerSeacrhDate.Size = new System.Drawing.Size(189, 23);
             this.dateTimePickerSeacrhDate.TabIndex = 25;
@@ -301,11 +309,39 @@ namespace lab1_list
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(171, 287);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 23);
+            this.comboBox1.TabIndex = 27;
+            // 
+            // dateTimePickerViewMoreCurrent
+            // 
+            this.dateTimePickerViewMoreCurrent.Location = new System.Drawing.Point(112, 379);
+            this.dateTimePickerViewMoreCurrent.Name = "dateTimePickerViewMoreCurrent";
+            this.dateTimePickerViewMoreCurrent.Size = new System.Drawing.Size(189, 23);
+            this.dateTimePickerViewMoreCurrent.TabIndex = 28;
+            // 
+            // buttonViewMoreCurrent
+            // 
+            this.buttonViewMoreCurrent.Location = new System.Drawing.Point(0, 379);
+            this.buttonViewMoreCurrent.Name = "buttonViewMoreCurrent";
+            this.buttonViewMoreCurrent.Size = new System.Drawing.Size(106, 23);
+            this.buttonViewMoreCurrent.TabIndex = 29;
+            this.buttonViewMoreCurrent.Text = "Вывести даты  >";
+            this.buttonViewMoreCurrent.UseVisualStyleBackColor = true;
+            this.buttonViewMoreCurrent.Click += new System.EventHandler(this.buttonViewMoreCurrent_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonViewMoreCurrent);
+            this.Controls.Add(this.dateTimePickerViewMoreCurrent);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.dateTimePickerSeacrhDate);
             this.Controls.Add(this.textBoxSearchName);
@@ -335,6 +371,8 @@ namespace lab1_list
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Удалить";
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,6 +407,11 @@ namespace lab1_list
         private System.Windows.Forms.TextBox textBoxSearchName;
         private System.Windows.Forms.DateTimePicker dateTimePickerSeacrhDate;
         private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource bindingSource2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerViewMoreCurrent;
+        private System.Windows.Forms.Button buttonViewMoreCurrent;
     }
 }
 

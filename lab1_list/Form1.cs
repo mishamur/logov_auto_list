@@ -29,12 +29,17 @@ namespace lab1_list
     public partial class Form1 : Form
     {
         UserList<PhoneTalk> phoneTalks;
+        List<int> phoneTalksCount;
 
         public Form1()
         {
             InitializeComponent();
             this.phoneTalks = new UserList<PhoneTalk>();
+            phoneTalksCount = new List<int>();
             LoadPhoneTalks();
+            textBoxIndex.Hide();
+
+            
             
         }
 
@@ -49,7 +54,15 @@ namespace lab1_list
                 listBox1.Items.Add(value);    
             }
 
-            
+            //кривая связка
+            phoneTalksCount.Clear();
+            for(int i = 0; i < phoneTalks.Count; i++)
+            {
+                phoneTalksCount.Add(i);
+            }
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = phoneTalksCount;
+            comboBox1.DataSource = bindingSource;
 
 
         }
@@ -87,9 +100,10 @@ namespace lab1_list
         private void LoadPhoneTalks()
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load("C:\\Users\\User\\source\\repos\\logov_auto\\lab1_list\\xmltext.xml");
-
-            foreach(XmlNode node in doc.DocumentElement)
+            //doc.Load("C:\\Users\\User\\source\\repos\\logov_auto\\lab1_list\\xmltext.xml");
+            doc.Load("C:\\Users\\misha\\Source\\Repos\\logov_auto_list\\lab1_list\\xmltext.xml");
+         
+            foreach (XmlNode node in doc.DocumentElement)
             {
                 string secondName = node["SecondName"].InnerText;
                 long phoneNumber = long.Parse(node["PhoneNumber"].InnerText);
@@ -171,8 +185,9 @@ namespace lab1_list
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            int position = int.Parse(textBoxIndex.Text);
-            if(position >= 0 & position < phoneTalks.Count)
+
+            int position = int.Parse(comboBox1.SelectedItem.ToString());//textBoxIndex.Text
+            if (position >= 0 & position < phoneTalks.Count)
             {
                 phoneTalks.Delete(position);
                 UpdateListBox();
@@ -217,7 +232,7 @@ namespace lab1_list
             }
 
 
-            int position = int.Parse(textBoxIndex.Text) + 1;
+            int position = int.Parse(comboBox1.SelectedItem.ToString()) + 1;
             if (position >= 0 & position < phoneTalks.Count)
             {
                 phoneTalks.Add(phoneTalk, position);
@@ -263,7 +278,7 @@ namespace lab1_list
             }
 
 
-            int position = int.Parse(textBoxIndex.Text);
+            int position = int.Parse(comboBox1.SelectedItem.ToString());
             if (position >= 0 & position <= phoneTalks.Count)
             {
                 phoneTalks.Add(phoneTalk, position);
@@ -306,6 +321,19 @@ namespace lab1_list
             UpdateListBox();
         }
 
-        
+        private void buttonViewMoreCurrent_Click(object sender, EventArgs e)
+        {
+            DateTime dateTime = dateTimePickerViewMoreCurrent.Value.Date;
+
+            List<PhoneTalk> temp = phoneTalks.ToList();
+            temp = temp.Where(x => x.DateTalk > dateTime).ToList();
+            listBox1.Items.Clear();
+            foreach (PhoneTalk talk in temp)
+            {
+                listBox1.Items.Add(talk);
+            }
+
+            return;
+        }
     }
 }
